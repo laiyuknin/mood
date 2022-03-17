@@ -10,13 +10,16 @@ import './index.scss'
 
 const Mood = () => {
   const [day, setDay] = useState<IDaysMood[]>(requestData);
+  const [selectDay, setSelectDay] = useState<number>(NaN);
 
   const nowaday = (new Date()).getDay()
 
-  const onClickItem = (index: number, checked?: boolean) => {
-    const newDay = day;
-    newDay[index].checked = !checked;
-    setDay([...newDay]);
+  const onClickItem = (key: number) => {
+    let newKey = key;
+    if (key === selectDay) {
+      newKey = NaN
+    }
+    setSelectDay(newKey);
   }
 
   const getAverage = useMemo(() => {
@@ -36,11 +39,13 @@ const Mood = () => {
       <View className='bottom'>
         {day.map((item, index) => {
           return (
-            <View className={`bottom-item ${item.checked ? 'bottom-item-checked' : ''} ${getProgressImage(item.mood)}`} key={item.day} onClick={() => onClickItem(index, item.checked)}>
+            <View className={`bottom-item ${item.key === selectDay ? 'bottom-item-checked' : ''} ${getProgressImage(item.mood)}`} key={item.day}>
               <View className='bottom-item-top'>
-                <View className='bottom-item-progress' style={{ height: `${item.mood ?? 30}%` }}>
-                  <Text className='bottom-item-progress-text'>{item.mood}</Text>
-                  <Image className='bottom-item-progress-image' src={localImage[getProgressImage(item.mood)]} />
+                <View className='bottom-item-progress-height' style={{ animation: `height${item.mood ?? 30} 2s both ${(index + 1) * 0.1}s` }}>
+                  <View className='bottom-item-progress' onClick={() => onClickItem(item.key)}>
+                    <Text className='bottom-item-progress-text'>{item.mood}</Text>
+                    <Image className='bottom-item-progress-image' src={localImage[getProgressImage(item.mood)]} />
+                  </View>
                 </View>
               </View>
               <Text className={`bottom-item-text ${nowaday === item.key ? 'bottom-item-textBg' : ''}`}>{daysName[item.key]}</Text>

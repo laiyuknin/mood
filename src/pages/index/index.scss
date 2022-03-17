@@ -1,6 +1,8 @@
 .mood {
-  padding: 16px;
+  margin: 16px;
   font-size: 32px;
+  border-radius: 40px;
+  box-shadow: 0 -10rpx 30rpx -6rpx #b6b6b665;
 
   .top {
     padding: 60px 0;
@@ -39,11 +41,13 @@
     position: relative;
     justify-content: space-between;
     border-top: 4px solid #cccccc3b;
+    padding: 0 8px 32px;
 
     &::before {
       content: '';
       position: absolute;
       top: 40%;
+      left: 0;
       background: #cccccc3b;
       height: 4px;
       width: 100%;
@@ -68,7 +72,8 @@
         flex-direction: column;
         padding: 1px;
         border-radius: 40px;
-        border: 6px solid #fff;
+        border: 6px solid transparent;
+        height: 100%;
 
         &-text {
           padding-top: 10px;
@@ -88,7 +93,7 @@
       &-text {
         width: 55px;
         text-align: center;
-        margin-top: 16px;
+        margin-top: 26px;
         padding: 8px;
         border-radius: 16px;
       }
@@ -102,34 +107,33 @@
 
     .faceNormal {
       .bottom-item-progress {
-        background: rgb(99, 173, 76);
+        background-color: rgb(99, 173, 76);
       }
     }
 
     .faceSmile {
       .bottom-item-progress {
-        background: rgb(255, 96, 48);
+        background-color: rgb(255, 130, 81);
       }
     }
 
     .faceSad {
       .bottom-item-progress {
-        background: rgb(255, 62, 62);
+        background-color: rgb(255, 89, 89);
       }
     }
 
     .faceQuestion {
       .bottom-item-progress {
-        background: rgb(155, 155, 155);
+        background-color: rgb(155, 155, 155);
       }
     }
 
     .bottom-item-checked.faceNormal {
       .bottom-item-progress {
-        background: linear-gradient(to bottom, #65d14f 0%, #57ff6e 100%);
-        border: 6px solid #acc0a8;
-        box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+        animation: clickNormal 1s both;
       }
+
       .bottom-item-text {
         background: #fff;
         color: rgb(99, 173, 76);
@@ -139,10 +143,9 @@
 
     .bottom-item-checked.faceSmile {
       .bottom-item-progress {
-        background: linear-gradient(to bottom, #e67549 0%, #ffb787 100%);
-        border: 6px solid #e6c6b2;
-        box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+        animation: clickSmile 1s both;
       }
+
       .bottom-item-text {
         background: #fff;
         color: rgb(255, 96, 48);
@@ -152,10 +155,9 @@
 
     .bottom-item-checked.faceSad {
       .bottom-item-progress {
-        background: linear-gradient(to bottom, #fd4a44 0%, #ffb0b0 100%);
-        border: 6px solid #c0a8a8;
-        box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+        animation: clickSad 1s both;
       }
+
       .bottom-item-text {
         background: #fff;
         color: rgb(255, 62, 62);
@@ -165,15 +167,142 @@
 
     .bottom-item-checked.faceQuestion {
       .bottom-item-progress {
-        background: linear-gradient(to bottom, #acacac 0%, #c9c9c9 100%);
-        border: 6px solid #b9b9b9;
-        box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+        animation: clickQuestion 1s both;
       }
+
       .bottom-item-text {
         background: #fff;
         color: rgb(155, 155, 155);
         box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
       }
     }
+  }
+}
+
+@keyframes clickNormal {
+  0% {
+    background-color: rgb(99, 173, 76);
+    border: 6px solid transparent;
+    box-shadow: none;
+  }
+
+  100% {
+    background-color: rgb(117, 250, 76);
+    border: 6px solid #e0ffd9;
+    box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+  }
+}
+
+@keyframes clickSmile {
+  0% {
+    background-color: rgb(255, 130, 81);
+    border: 6px solid transparent;
+    box-shadow: none;
+  }
+
+  100% {
+    background-color: rgb(255, 72, 0);
+    border: 6px solid #ffdfca;
+    box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+  }
+}
+
+@keyframes clickSad {
+  0% {
+    background-color: rgb(255, 89, 89);
+    border: 6px solid transparent;
+    box-shadow: none;
+  }
+
+  100% {
+    background-color: rgb(255, 0, 0);
+    border: 6px solid #ffdede;
+    box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+  }
+}
+
+@keyframes clickQuestion {
+  0% {
+    background-color: rgb(155, 155, 155);
+    border: 6px solid transparent;
+    box-shadow: none;
+  }
+
+  100% {
+    background-color: rgb(201, 201, 201);
+    border: 6px solid #b9b9b9;
+    box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+  }
+}
+
+// 待优化：配置化
+
+@keyframes height86 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 86%;
+  }
+}
+
+@keyframes height80 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 80%;
+  }
+}
+
+@keyframes height30 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 30%;
+  }
+}
+
+@keyframes height90 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 90%;
+  }
+}
+
+@keyframes height59 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 59%;
+  }
+}
+
+@keyframes height97 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 97%;
+  }
+}
+
+@keyframes height81 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 81%;
   }
 }
