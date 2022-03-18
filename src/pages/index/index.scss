@@ -1,179 +1,181 @@
 .mood {
-  margin: 16px;
-  font-size: 32px;
-  border-radius: 40px;
-  box-shadow: 0 -10rpx 30rpx -6rpx #b6b6b665;
+  width: 100%;
+  height: 100%;
+  .card {
+    margin: 16px;
+    font-size: 32px;
 
-  .top {
-    padding: 60px 0;
-    border-radius: 40px 40px 0 0;
-    box-shadow: 0 -10rpx 30rpx -6rpx #b6b6b665;
+    .top {
+      padding: 60px 0;
+      border-radius: 40px 40px 0 0;
+      box-shadow: 0 -10rpx 30rpx -6rpx #b6b6b665;
 
-    .h1 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 40px;
-
-      Image {
-        margin-right: 16px;
-        width: 60px;
-        height: 60px;
-      }
-    }
-
-    .h2 {
-      margin-bottom: 20px;
-      text-align: center;
-      font-size: 120px;
-      font-weight: bolder;
-    }
-
-    .h3 {
-      text-align: center;
-      color: #999;
-    }
-
-  }
-
-  .bottom {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    border-top: 4px solid #cccccc3b;
-    padding: 0 8px 32px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 40%;
-      left: 0;
-      background: #cccccc3b;
-      height: 4px;
-      width: 100%;
-      z-index: -1;
-    }
-
-    &-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-
-      &-top {
-        height: 500px;
+      .h1 {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
+        margin-bottom: 40px;
+
+        .h1-image {
+          margin-right: 16px;
+          width: 60px;
+          height: 60px;
+        }
       }
 
-      &-progress {
+      .h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 120px;
+        font-weight: bolder;
+      }
+
+      .h3 {
+        text-align: center;
+        color: #999;
+      }
+
+    }
+
+    .bottom {
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      border-top: 4px solid #cccccc3b;
+      padding: 0 8px 32px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 40%;
+        left: 0;
+        background: #cccccc3b;
+        height: 4px;
+        width: 100%;
+        z-index: -1;
+      }
+
+      &-item {
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
-        padding: 1px;
-        border-radius: 40px;
-        border: 6px solid transparent;
-        height: 100%;
+
+        &-top {
+          height: 500px;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+        }
+
+        &-progress {
+          display: flex;
+          flex-direction: column;
+          padding: 1px;
+          border-radius: 40px;
+          border: 6px solid transparent;
+          height: 100%;
+
+          &-text {
+            padding-top: 10px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+          }
+
+          &-image {
+            margin-top: auto;
+            width: 70px;
+            height: 70px;
+          }
+
+        }
 
         &-text {
-          padding-top: 10px;
-          width: 100%;
+          width: 55px;
           text-align: center;
+          margin-top: 26px;
+          padding: 8px;
+          border-radius: 16px;
+        }
+
+        &-textBg {
           color: #fff;
-        }
-
-        &-image {
-          margin-top: auto;
-          width: 70px;
-          height: 70px;
+          background: #000;
         }
 
       }
 
-      &-text {
-        width: 55px;
-        text-align: center;
-        margin-top: 26px;
-        padding: 8px;
-        border-radius: 16px;
+      .faceNormal {
+        .bottom-item-progress {
+          background-color: rgb(99, 173, 76);
+        }
       }
 
-      &-textBg {
-        color: #fff;
-        background: #000;
+      .faceSmile {
+        .bottom-item-progress {
+          background-color: rgb(255, 130, 81);
+        }
       }
 
-    }
-
-    .faceNormal {
-      .bottom-item-progress {
-        background-color: rgb(99, 173, 76);
-      }
-    }
-
-    .faceSmile {
-      .bottom-item-progress {
-        background-color: rgb(255, 130, 81);
-      }
-    }
-
-    .faceSad {
-      .bottom-item-progress {
-        background-color: rgb(255, 89, 89);
-      }
-    }
-
-    .faceQuestion {
-      .bottom-item-progress {
-        background-color: rgb(155, 155, 155);
-      }
-    }
-
-    .bottom-item-checked.faceNormal {
-      .bottom-item-progress {
-        animation: clickNormal 1s both;
+      .faceSad {
+        .bottom-item-progress {
+          background-color: rgb(255, 89, 89);
+        }
       }
 
-      .bottom-item-text {
-        background: #fff;
-        color: rgb(99, 173, 76);
-        box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
-      }
-    }
-
-    .bottom-item-checked.faceSmile {
-      .bottom-item-progress {
-        animation: clickSmile 1s both;
+      .faceQuestion {
+        .bottom-item-progress {
+          background-color: rgb(155, 155, 155);
+        }
       }
 
-      .bottom-item-text {
-        background: #fff;
-        color: rgb(255, 96, 48);
-        box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
-      }
-    }
+      .bottom-item-checked.faceNormal {
+        .bottom-item-progress {
+          animation: clickNormal 1s both;
+        }
 
-    .bottom-item-checked.faceSad {
-      .bottom-item-progress {
-        animation: clickSad 1s both;
-      }
-
-      .bottom-item-text {
-        background: #fff;
-        color: rgb(255, 62, 62);
-        box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
-      }
-    }
-
-    .bottom-item-checked.faceQuestion {
-      .bottom-item-progress {
-        animation: clickQuestion 1s both;
+        .bottom-item-text {
+          background: #fff;
+          color: rgb(99, 173, 76);
+          box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+        }
       }
 
-      .bottom-item-text {
-        background: #fff;
-        color: rgb(155, 155, 155);
-        box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+      .bottom-item-checked.faceSmile {
+        .bottom-item-progress {
+          animation: clickSmile 1s both;
+        }
+
+        .bottom-item-text {
+          background: #fff;
+          color: rgb(255, 96, 48);
+          box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+        }
+      }
+
+      .bottom-item-checked.faceSad {
+        .bottom-item-progress {
+          animation: clickSad 1s both;
+        }
+
+        .bottom-item-text {
+          background: #fff;
+          color: rgb(255, 62, 62);
+          box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+        }
+      }
+
+      .bottom-item-checked.faceQuestion {
+        .bottom-item-progress {
+          animation: clickQuestion 1s both;
+        }
+
+        .bottom-item-text {
+          background: #fff;
+          color: rgb(155, 155, 155);
+          box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+        }
       }
     }
   }

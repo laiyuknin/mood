@@ -28,30 +28,32 @@ const Mood = () => {
 
   return (
     <View className='mood'>
-      <View className='top'>
-        <View className='h1'>
-          <Image src={localImage.headPortrait} />
-          <Text>李强</Text>
+      <View className='card'>
+        <View className='top'>
+          <View className='h1'>
+            <Image className='h1-image' src={localImage.headPortrait} />
+            <Text>李强</Text>
+          </View>
+          <View className='h2'>{getAverage}</View>
+          <View className='h3'>周平均心情指数</View>
         </View>
-        <View className='h2'>{getAverage}</View>
-        <View className='h3'>周平均心情指数</View>
-      </View>
-      <View className='bottom'>
-        {day.map((item, index) => {
-          return (
-            <View className={`bottom-item ${item.key === selectDay ? 'bottom-item-checked' : ''} ${getProgressImage(item.mood)}`} key={item.day}>
-              <View className='bottom-item-top'>
-                <View className='bottom-item-progress-height' style={{ animation: `height${item.mood ?? 30} 2s both ${(index + 1) * 0.1}s` }}>
-                  <View className='bottom-item-progress' onClick={() => onClickItem(item.key)}>
-                    <Text className='bottom-item-progress-text'>{item.mood}</Text>
-                    <Image className='bottom-item-progress-image' src={localImage[getProgressImage(item.mood)]} />
+        <View className='bottom'>
+          {day.map((item, index) => {
+            return (
+              <View className={`bottom-item ${item.key === selectDay ? 'bottom-item-checked' : ''} ${getProgressImage(item.mood)}`} key={item.day}>
+                <View className='bottom-item-top'>
+                  <View className='bottom-item-progress-height' style={{ animation: `height${item.mood ?? 30} 2s both ${(index + 1) * 0.1}s` }}>
+                    <View className='bottom-item-progress' onClick={() => onClickItem(item.key)}>
+                      <Text className='bottom-item-progress-text'>{item.mood}</Text>
+                      <Image className='bottom-item-progress-image' src={localImage[getProgressImage(item.mood)]} />
+                    </View>
                   </View>
                 </View>
+                <Text className={`bottom-item-text ${nowaday === item.key ? 'bottom-item-textBg' : ''}`}>{daysName[item.key]}</Text>
               </View>
-              <Text className={`bottom-item-text ${nowaday === item.key ? 'bottom-item-textBg' : ''}`}>{daysName[item.key]}</Text>
-            </View>
-          )
-        })}
+            )
+          })}
+        </View>
       </View>
     </View>
   )
