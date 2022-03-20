@@ -1,6 +1,4 @@
 .mood {
-  width: 100%;
-  height: 100%;
   .card {
     margin: 16px;
     font-size: 32px;
@@ -8,7 +6,7 @@
     .top {
       padding: 60px 0;
       border-radius: 40px 40px 0 0;
-      box-shadow: 0 -10rpx 30rpx -6rpx #b6b6b665;
+      box-shadow: 0 -10px 30px -6px #b6b6b665;
 
       .h1 {
         display: flex;
@@ -138,7 +136,7 @@
         .bottom-item-text {
           background: #fff;
           color: rgb(99, 173, 76);
-          box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+          box-shadow: 0px 0px 10px 10px #b6b6b665;
         }
       }
 
@@ -150,7 +148,7 @@
         .bottom-item-text {
           background: #fff;
           color: rgb(255, 96, 48);
-          box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+          box-shadow: 0px 0px 10px 10px #b6b6b665;
         }
       }
 
@@ -162,7 +160,7 @@
         .bottom-item-text {
           background: #fff;
           color: rgb(255, 62, 62);
-          box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+          box-shadow: 0px 0px 10px 10px #b6b6b665;
         }
       }
 
@@ -174,7 +172,7 @@
         .bottom-item-text {
           background: #fff;
           color: rgb(155, 155, 155);
-          box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+          box-shadow: 0px 0px 10px 10px #b6b6b665;
         }
       }
     }
@@ -191,7 +189,7 @@
   100% {
     background-color: rgb(117, 250, 76);
     border: 6px solid #e0ffd9;
-    box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+    box-shadow: 0px 0px 10px 10px #b6b6b665;
   }
 }
 
@@ -205,7 +203,7 @@
   100% {
     background-color: rgb(255, 72, 0);
     border: 6px solid #ffdfca;
-    box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+    box-shadow: 0px 0px 10px 10px #b6b6b665;
   }
 }
 
@@ -219,7 +217,7 @@
   100% {
     background-color: rgb(255, 0, 0);
     border: 6px solid #ffdede;
-    box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+    box-shadow: 0px 0px 10px 10px #b6b6b665;
   }
 }
 
@@ -233,7 +231,7 @@
   100% {
     background-color: rgb(201, 201, 201);
     border: 6px solid #b9b9b9;
-    box-shadow: 0rpx 0rpx 10rpx 10rpx #b6b6b665;
+    box-shadow: 0px 0px 10px 10px #b6b6b665;
   }
 }
 

@@ -12,7 +12,7 @@ const Mood = () => {
   const [day, setDay] = useState<IDaysMood[]>(requestData);
   const [selectDay, setSelectDay] = useState<number>(NaN);
 
-  const nowaday = (new Date()).getDay()
+  const nowadays = (new Date()).getDay()
 
   const onClickItem = (key: number) => {
     let newKey = key;
@@ -49,7 +49,7 @@ const Mood = () => {
                     </View>
                   </View>
                 </View>
-                <Text className={`bottom-item-text ${nowaday === item.key ? 'bottom-item-textBg' : ''}`}>{daysName[item.key]}</Text>
+                <Text className={`bottom-item-text ${nowadays === item.key ? 'bottom-item-textBg' : ''}`}>{daysName[item.key]}</Text>
               </View>
             )
           })}
